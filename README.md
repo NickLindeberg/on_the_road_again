@@ -1,6 +1,6 @@
-# README
-
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/NickLindeberg/on_the_road_again.svg?columns=all)](https://waffle.io/NickLindeberg/on_the_road_again)
+
+## On The Road Again
 
 OTRA is an app designed to help musicians and other touring performers plan over the road tours.  
 
@@ -9,8 +9,9 @@ After years of playing music in Denver and the surround states, I realized that 
 By giving musicians an easy way to track their sales and venue information, it gives them the information to decide where to plan their next tour.  
 
 OTRA is for anyone that is on the road performing.  
-APIs 
 
-    -Songkick for venue information
-    -Google Maps
+### APIs 
+
+- Songkick for venue information
+- Google Maps
 
