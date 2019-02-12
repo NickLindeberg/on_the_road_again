@@ -7,5 +7,6 @@ RSpec.describe Tour, type: :model do
 
   describe 'Relationship' do
     it { should belong_to(:artist)}
+    it { should have_many(:events)}
   end
 end
