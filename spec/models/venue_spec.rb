@@ -15,7 +15,7 @@ RSpec.describe Venue, type: :model do
     it { should validate_presence_of(:songkick_id) }
   end
 
-  xdescribe 'Relationship' do
+  describe 'Relationship' do
     it { should have_many(:events)}
   end
 end
