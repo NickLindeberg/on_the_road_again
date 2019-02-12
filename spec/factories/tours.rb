@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :tour do
-    name { "MyText" }
+    name { "The Great Depression" }
   end
 end
