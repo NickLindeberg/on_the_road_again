@@ -55,15 +55,11 @@ jobs:
       - run: bundle exec rake db:schema:load
 
       # run tests!
-      - run:
-          name: run tests
-          command:
-            - run: bundle exec rspec
+      - run: bundle exec rspec
 
-
-      # collect reports
-      - store_test_results:
-          path: /tmp/test-results
-      - store_artifacts:
-          path: /tmp/test-results
-          destination: test-results
+      # # collect reports
+      # - store_test_results:
+      #     path: /tmp/test-results
+      # - store_artifacts:
+      #     path: /tmp/test-results
+      #     destination: test-results
