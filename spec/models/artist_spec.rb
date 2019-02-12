@@ -10,7 +10,7 @@ RSpec.describe Artist, type: :model do
   end
 
   describe 'Relationship' do
-    it { should have_many(:) }
+    it { should have_many(:tours) }
   end
 
   # it "checks role of instance of user" do
