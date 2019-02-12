@@ -1,4 +1,27 @@
+version: 2
 jobs:
-  build:
-    macos:
-      xcode: "9.0"
+  test:
+    docker:
+       - image: circleci/ruby:2.4.1-node-browsers
+         environment:
+           - RAILS_ENV: test
+           - PGHOST: 127.0.0.1
+           - PGUSER: ubuntu
+
+       - image: circleci/postgres:10.4
+         environment:
+         - POSTGRES_USER: ubuntu
+         - POSTGRES_DB: on_the_road_again_test
+         - POSTGRES_PASSWORD: ""
+
+    steps:
+      - checkout
+      - run:
+          name: install dependencies
+          command: bundle install --path vendor/bundle
+      - run:
+          name: create and migrate db
+          command: bundle exec rake db:{create,migrate,seed}
+      - run:
+          name: run tests
+          command: rspec
