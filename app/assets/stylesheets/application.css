@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   height: 100vh;
+   background-image: url('purple.jpg');
+   background-repeat: no-repeat;
+   background-color: black;
+   text-align: center;
+   background-size: cover;
+   background-position: 50% 50%;
+   font-family: "Lucida Sans Unicode";
+ }
