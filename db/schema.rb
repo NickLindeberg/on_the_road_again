@@ -17,10 +17,9 @@ ActiveRecord::Schema.define(version: 2019_02_12_161639) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.string "token"
+    t.string "google_token"
     t.string "email"
-    t.string "google_client_id"
-    t.text "refresh_token"
+    t.text "google_refresh_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
