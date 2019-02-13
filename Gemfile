@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'factory_bot_rails'
 gem 'bundler', '~> 2.0.1'
+gem 'omniauth-google-oauth2'
 
 
 group :development, :test do
