@@ -1,11 +1,13 @@
 class Artist < ApplicationRecord
-  validates_presence_of :name, :google_token, :email, :google_refresh_token
+  validates_presence_of :name, :google_token, :email, :google_client_id
   has_many :tours
 
-  # def self.from_omniauth(auth)
-  #   where(email: auth.info.email).first_or_initialize do |artist|
-  #     artist.name = auth.info.name
-  #     artist.email = auth.info.email
-  #   end
-  # end
+  def self.find_or_create_from_auth_hash(auth)
+    artist = find_or_create_by(google_client_id: auth["uid"])
+  	artist.name = auth["info"]["first_name"]
+  	artist.email = auth["info"]["email"]
+    artist.google_token = auth["credentials"]["token"]
+  	artist.save
+    artist
+  end
 end

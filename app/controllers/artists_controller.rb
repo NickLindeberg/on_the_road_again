@@ -1,4 +1,5 @@
 class ArtistsController < ApplicationController
-  def new 
+  def show
+    @current_artist = current_user
   end
 end

@@ -4,7 +4,7 @@ class CreateArtists < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :google_token
       t.string :email
-      t.text :google_refresh_token
+      t.text :google_client_id
 
       t.timestamps
     end

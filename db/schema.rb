@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_02_12_161639) do
     t.string "name"
     t.string "google_token"
     t.string "email"
-    t.text "google_refresh_token"
+    t.text "google_client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
