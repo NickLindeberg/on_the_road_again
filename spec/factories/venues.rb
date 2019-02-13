@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :venue do
     name { "MyString" }
-    adress { "MyString" }
+    address { "MyString" }
     city { "MyString" }
     state { "MyString" }
     website { "MyString" }
