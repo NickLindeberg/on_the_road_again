@@ -23,3 +23,66 @@
    background-size: cover;
    background-position: 50% 50%;
  }
+
+ .band-name {
+   background-color: blue;
+   opacity: 0.9;
+   margin-left: 50px;
+   margin-right: 50px;
+   font-size: 75px;
+ }
+
+ .band-stats {
+   background-color: teal;
+   opacity: 0.9;
+   margin-left: 50px;
+   margin-right: 50px;
+   font-size: 75px; }
+
+ .future-tours {
+   background-color: #15A2B8;
+   font-size: 50px;
+   opacity: 0.9;
+   margin-left: 50px;
+   margin-right: 50px;
+   margin-top: 5px;
+ }
+
+ .past-tours {
+   background-color: pink;
+   font-size: 50px;
+   opacity: 0.9;
+   margin-left: 50px;
+   margin-right: 50px;
+   margin-top: 5px;
+ }
+
+ .jumbotron {
+   margin-left: 5px;
+   margin-right: 5px;
+   margin-top: 5px;
+   background-color: pink;
+   opacity: 0.9;
+ }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  max-height: 75px;
+}
+
+.foot {
+  max-height: 50px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.nav-link {
+  text-align: left;
+  font-size: 20px;
+}

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get '/', to: "welcome#index"
-  get '/about', to: "about#index"
-  get '/dashboard', to: "artists#show"
+  root to: "welcome#index"
+  get 'about', to: "about#index"
+  get 'dashboard', to: "artists#index"
 
   resources :venues, only: [:show]
   resources :events, only: [:show, :new, :create, :edit, :update]
