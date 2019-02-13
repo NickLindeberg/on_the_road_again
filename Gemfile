@@ -28,6 +28,8 @@ group :development, :test do
   gem 'figaro'
   gem 'simplecov'
   gem 'vcr'
+  gem 'factory_bot_rails'
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 group :development do
