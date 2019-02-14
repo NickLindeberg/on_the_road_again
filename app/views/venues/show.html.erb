@@ -6,3 +6,33 @@
     <li><%= @venue.website%></li>
     <li><%= @venue.phone%></li>
   </ul>
+  <div class="future-tours col-lg">
+      Future Events
+      <div class="f-tours">
+        <% @venue.events.each do |event| %>
+        <% if event.show_time > Time.now %>
+          <ul>
+            <li><%= event.name %></li>
+          </ul>
+            <% else %>
+            Currently no forthcoming events.
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="past-tours col-lg">
+      Past Events
+      <div class="p-tours">
+        <% @venue.events.each do |event| %>
+        <% if event.show_time < Time.now %>
+          <ul>
+            <li><%= event.name %></li>
+          </ul>
+          <% else %>
+          Currently no past events.
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
