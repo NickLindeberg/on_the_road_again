@@ -3,6 +3,10 @@ class SongkickService
     get_json("search/venues.json?query=#{city}&apikey=#{ENV["SONGKICK_API_KEY"]}")[:resultsPage][:results][:venue]
   end
 
+  def get_venue_by_id(id)
+    get_json("venues/#{id}.json?apikey=#{ENV["SONGKICK_API_KEY"]}")[:resultsPage][:results][:venue]
+  end
+
   private
 
   def get_json(path)
