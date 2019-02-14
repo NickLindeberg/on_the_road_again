@@ -8,7 +8,7 @@ class ToursController < ApplicationController
     artist = current_artist
     tour = artist.tours.create(tour_params)
 
-    redirect_to dashboard_path
+    redirect_to "/tours/#{tour.id}/events/new"
   end
 
   def show

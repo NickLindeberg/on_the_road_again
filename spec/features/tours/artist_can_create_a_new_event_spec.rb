@@ -5,9 +5,9 @@ describe 'New events' do
     artist = create(:artist)
     tour = create(:tour, artist_id: artist.id)
 
-    visit "/tours/#{tour.id}/events/new"
+    new_tour_event_path
 
-    
-
+    expect(page).to have_content(tour.name)
+    save_and_open_page
   end
 end
