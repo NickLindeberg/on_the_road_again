@@ -1,7 +1,6 @@
 class ArtistsController < ApplicationController
 
-  def index
-    # @ArtistFacade = ArtistFacade.new(current_artist)
+  def show
+    @current_artist = current_artist
   end
-
 end
