@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.feature "AS a user" do
-  describe "When I visit the venue show page" do
-    it "I can see forthcoming" do
+  xdescribe "When I visit the venue show page" do
+    xit "I can see forthcoming" do
       artist = create(:artist)
       venue = create(:venue)
       tour = create(:tour, artist: artist)
@@ -17,7 +17,7 @@ RSpec.feature "AS a user" do
     end
   end
 
-    it "I can see past events" do
+    xit "I can see past events" do
       artist = create(:artist)
       venue = create(:venue)
       tour = create(:tour, artist: artist)
