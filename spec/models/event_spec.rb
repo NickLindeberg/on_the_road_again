@@ -8,6 +8,5 @@ RSpec.describe Event, type: :model do
 
   describe 'Relationship' do
     it { should belong_to(:tour) }
-    it { should belong_to(:venue) }
   end
 end

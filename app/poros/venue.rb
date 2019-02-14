@@ -1,5 +1,4 @@
-class Venue < ApplicationRecord
-  has_many :events
+class Venue
 
   attr_reader :name, :address, :city, :state, :website, :phone, :zip, :lat, :lng, :songkick_id, :capacity
 
