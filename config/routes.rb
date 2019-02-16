@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: "artists#show"
 
   resources :venues, only: [:index]
-  resources :events, only: [:show]
+  resources :events, only: [:show, :update]
   resources :tours, only: [:show, :new, :create, :edit, :update] do
     resources :events, only: [:new, :create]
   end

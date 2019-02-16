@@ -6,7 +6,19 @@ Time: <%= @event.show_time  %>
     Where: <%= @venue.name %>
 </section>
 
+<br>
+<% if @current_artist && @event.show_date.past? %>
+  <section class="stats">
+    <h2>Profit Statistics</h2>
+    <%= form_for @event do |f| %>
 
-<section class="stats">
+    <%= f.label 'Gig Profit' %><br>
+    <%= f.text_field :event_profit %><br>
 
-</section>
+    <%= f.label 'Travel Cost' %><br>
+    <%= f.text_area :travel_cost %><br>
+
+    <%= f.submit "Calculate Profit" %>
+  <% end %>
+  </section>
+<% end %>

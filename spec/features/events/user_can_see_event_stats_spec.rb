@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "Events" do
   it "event show page shows statistics on that particular event" do
-    VCR.use_cassette("event_stats_casette") do
+    VCR.use_cassette("event_show_casette") do
 
       artist = create(:artist)
       tour = create(:tour, artist_id: artist.id)
@@ -45,8 +45,11 @@ describe "Events" do
       visit event_path(event_1.id)
 
       expect(page).to have_content("Profit Statistics")
+      fill_in "event[event_profit]", with: "2000.00"
+      fill_in "event[travel_cost]", with: "150.00"
 
-
+      click_on "Calculate Profit"
+      save_and_open_page
     end
   end
 end

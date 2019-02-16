@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_16_210419) do
+ActiveRecord::Schema.define(version: 2019_02_16_224655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2019_02_16_210419) do
     t.datetime "updated_at", null: false
     t.integer "venue_id"
     t.date "show_date"
+    t.decimal "event_profit"
+    t.decimal "travel_cost"
     t.index ["tour_id"], name: "index_events_on_tour_id"
   end
 
