@@ -18,11 +18,3 @@ class EventsController < ApplicationController
   end
 
 end
-
-#
-# <!-- <%= form_tag :events, method: :get, class: "form-inline" do %>
-#   <div class="form-group search-field">
-#     <%= text_field_tag :q, "", class: "form-control" %>
-#     <%= submit_tag "Locate", class: "btn btn-primary" %>
-#   </div>
-# <% end %> -->

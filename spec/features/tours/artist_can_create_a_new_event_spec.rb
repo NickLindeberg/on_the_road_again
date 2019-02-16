@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'New events' do
-  it 'lets artist add events to a tour' do
+  xit 'lets artist add events to a tour' do
     artist = create(:artist)
     tour = create(:tour, artist_id: artist.id)
 
