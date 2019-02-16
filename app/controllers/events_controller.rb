@@ -3,13 +3,12 @@ class EventsController < ApplicationController
   def new
     @tour = current_artist.tours.find_by(params[:id])
     @events = @tour.events.new
-
+    service = VenueBuilderFacade.new
+    @venues = service.find_venues_by_city(params[:q])
   end
 
   def create
-    require "pry"; binding.pry
 
-    redirect_to dashboard_path
   end
 
   private
@@ -19,3 +18,11 @@ class EventsController < ApplicationController
   end
 
 end
+
+#
+# <!-- <%= form_tag :events, method: :get, class: "form-inline" do %>
+#   <div class="form-group search-field">
+#     <%= text_field_tag :q, "", class: "form-control" %>
+#     <%= submit_tag "Locate", class: "btn btn-primary" %>
+#   </div>
+# <% end %> -->

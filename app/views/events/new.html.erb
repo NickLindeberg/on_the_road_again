@@ -7,21 +7,29 @@
    <div>
      <%= e.date_field :show_time %>
    </div>
+   <h3>Enter A City To Find Venues</h3>
    <div>
-     <%= e.text_field :venue_id, placeholder: "City" %>
+     <%= form_tag :new_tour_event, method: :get, class: "form-inline" do %>
+       <div class="form-group search-field">
+         <%= text_field_tag :q, "", class: "form-control" %>
+         <%= submit_tag "Locate", id: 'myBtn', class: "btn btn-primary" %>
+       </div>
+     <% end %>
    </div>
    <div><%= e.submit %></div>
  <% end %>
 
- <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
 
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <%= @tour.name %>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <% @venues.map do |v| %>
+        <%= v.name %>
+      <% end %>
+      <br>
+    </div>
   </div>
-</div>
 
  <script>
  // Get the modal
