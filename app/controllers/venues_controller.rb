@@ -1,5 +1,6 @@
 class VenuesController < ApplicationController
   def show
-    @venue = Venue.find(params[:id])
+    @events = Event.where(venue_id: params[:id])
+    @venue = VenueBuilderFacade.new.find_single_venue_by_id(params[:id])
   end
 end
