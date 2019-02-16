@@ -1,5 +1,7 @@
 class VenuesController < ApplicationController
-  def show
-    @venue = Venue.find(params[:id])
+
+  def index
+    service = VenueBuilderFacade.new
+    service.find_venues_by_city("Denver")
   end
 end
