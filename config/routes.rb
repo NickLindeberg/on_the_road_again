@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   resources :venues, only: [:index]
   resources :events, only: [:show]
   resources :tours, only: [:show, :new, :create, :edit, :update] do
-    resources :events
+    resources :events, only: [:new, :create]
   end
+
 
   get '/login', to: redirect('/auth/google_oauth2'), as: 'login'
   get '/register', to: redirect('/auth/google_oauth2'), as: 'register'
