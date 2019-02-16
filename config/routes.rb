@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'venues/show'
   root to: "welcome#index"
   get 'about', to: "about#index"
   get 'dashboard', to: "artists#show"
