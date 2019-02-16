@@ -49,7 +49,11 @@ describe "Events" do
       fill_in "event[travel_cost]", with: "150.00"
 
       click_on "Calculate Profit"
+
+      expect(current_path).to eq(event_path(event_1.id))
       save_and_open_page
+      expect(page).to eq(event_1.event_profit)
+      expect(page).to eq(event_1.travel_cost)
     end
   end
 end

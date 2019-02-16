@@ -7,8 +7,13 @@ Time: <%= @event.show_time  %>
 </section>
 
 <br>
-<% if @current_artist && @event.show_date.past? %>
   <section class="stats">
+<% if @current_artist && @event.event_profit %>
+  <h2>Profit Statistics</h2>
+  Gig Profit: <%=@event.event_profit  %> <br>
+  Travel_cost: <%=@event.travel_cost  %> <br>
+
+<% elsif @current_artist && @event.show_date.past? %>
     <h2>Profit Statistics</h2>
     <%= form_for @event do |f| %>
 
@@ -21,4 +26,5 @@ Time: <%= @event.show_time  %>
     <%= f.submit "Calculate Profit" %>
   <% end %>
   </section>
+<% else  %>
 <% end %>
