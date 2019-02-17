@@ -1,0 +1,13 @@
+<h1><%= @tour.name%> Show Page</h1>
+<p>By: <%= @tour.artist.name %></p>
+
+<% @tour.events.each do |event| %>
+  <% if event.show_date > Time.now %>
+    <h2><%= event.name %></h2>
+      <p class ="d-inline"><%= link_to "Edit Event", edit_event_path(event) %></p> |
+      <p class ="d-inline"><%= link_to "Delete Event", event_path(event), method: :delete %></p> |
+    <% else %>
+    <h2><%= event.name %></h2>
+      <p>Event was <%= distance_of_time_in_words_to_now(event.show_date) %> ago!</p>
+  <% end %>
+<% end %>

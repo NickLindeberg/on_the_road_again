@@ -4,6 +4,7 @@ Date: <%= @event.show_date  %> <br>
 Time: <%= @event.show_time  %>
   <section class="Venue info">
     Where: <%= @venue.name %>
+    <%= link_to "Venue Information", venue_path(@venue.songkick_id), :class => "btn btn-info btn-lg"  %>
 </section>
 
 <br>
@@ -12,6 +13,7 @@ Time: <%= @event.show_time  %>
   <h2>Profit Statistics</h2>
   Gig Profit: <%=@event.event_profit  %> <br>
   Travel cost: <%=@event.travel_cost  %> <br>
+  Total Profit: <%= number_to_currency(@event.total_profit, precision: 2) %>
 
 <% elsif @current_artist && @event.show_date.past? %>
     <h2>Add Profit Statistics</h2>
