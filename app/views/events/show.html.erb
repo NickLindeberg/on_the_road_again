@@ -1,0 +1,30 @@
+<h1> <%= @event.name %> </h1>
+<section class="Event info">
+Date: <%= @event.show_date  %> <br>
+Time: <%= @event.show_time  %>
+  <section class="Venue info">
+    Where: <%= @venue.name %>
+</section>
+
+<br>
+  <section class="stats">
+<% if @current_artist && @event.event_profit %>
+  <h2>Profit Statistics</h2>
+  Gig Profit: <%=@event.event_profit  %> <br>
+  Travel cost: <%=@event.travel_cost  %> <br>
+
+<% elsif @current_artist && @event.show_date.past? %>
+    <h2>Add Profit Statistics</h2>
+    <%= form_for @event do |f| %>
+
+    <%= f.label 'Gig Profit' %><br>
+    <%= f.text_field :event_profit %><br>
+
+    <%= f.label 'Travel Cost' %><br>
+    <%= f.text_area :travel_cost %><br>
+
+    <%= f.submit "Calculate Profit" %>
+  <% end %>
+  </section>
+<% else  %>
+<% end %>
