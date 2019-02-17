@@ -14,7 +14,7 @@ class ArtistsController < ApplicationController
 
   def update
     current_artist.band_name = params[:artist][:band_name]
-    @current_artist = current_artist
+    current_artist.save
     redirect_to dashboard_path
   end
 end
