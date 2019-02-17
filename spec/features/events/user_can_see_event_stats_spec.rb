@@ -19,7 +19,7 @@ describe "Events" do
   end
 
   xit "event show has link to to venue show page " do
-    VCR.use_cassette("event_stats_casette") do
+    VCR.use_cassette("event_stats_1_casette") do
 
       artist = create(:artist)
       tour = create(:tour, artist_id: artist.id)
@@ -34,7 +34,7 @@ describe "Events" do
   end
 
   it "logged in Artist sees form for past event only  " do
-    VCR.use_cassette("event_stats_casette") do
+    VCR.use_cassette("event_stats_2_casette") do
 
       artist = create(:artist)
       tour = create(:tour, artist_id: artist.id)
@@ -58,7 +58,7 @@ describe "Events" do
   end
 
   it "logged in Artist does not see statistics for a feature event" do
-    VCR.use_cassette("past_event_stats_casette") do
+    VCR.use_cassette("past_event_stats_3_casette") do
 
       artist = create(:artist)
       tour = create(:tour, artist_id: artist.id)

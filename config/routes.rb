@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'about', to: "about#index"
   get 'dashboard', to: "artists#show"
 
-  resources :venues, only: [:index]
+  resources :venues, only: [:index, :show]
   resources :events, only: [:show, :update]
   resources :tours, only: [:show, :new, :create, :edit, :update] do
     resources :events, only: [:new, :create]
