@@ -1,14 +1,17 @@
 class EventsController < ApplicationController
 
   def new
-    @tour = current_artist.tours.find_by(params[:id])
+    @tour = Tour.find_by(id: params[:tour_id])
     @events = @tour.events.new
     service = VenueBuilderFacade.new
     @venues = service.find_venues_by_city(params[:q])
   end
 
   def create
-
+    tour = Tour.find_by(id: params[:tour_id])
+    x = tour.events.create(event_params)
+    flash[:notice] = "Event Added"
+    redirect_to new_tour_event_path
   end
 
   private
@@ -18,11 +21,3 @@ class EventsController < ApplicationController
   end
 
 end
-
-#
-# <!-- <%= form_tag :events, method: :get, class: "form-inline" do %>
-#   <div class="form-group search-field">
-#     <%= text_field_tag :q, "", class: "form-control" %>
-#     <%= submit_tag "Locate", class: "btn btn-primary" %>
-#   </div>
-# <% end %> -->
