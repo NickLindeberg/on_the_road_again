@@ -18,7 +18,7 @@ describe "Events" do
     end
   end
 
-  xit "event show has link to to venue show page " do
+  it "event show has link to to venue show page " do
     VCR.use_cassette("event_stats_1_casette") do
 
       artist = create(:artist)
@@ -29,7 +29,8 @@ describe "Events" do
 
       visit event_path(event_1.id)
 
-      expect(page).to have_link("Venue Information", :href => "actual link")
+      click_on("Venue Information")
+      expect(current_path).to eq(venue_path(event_1.venue_id))
     end
   end
 

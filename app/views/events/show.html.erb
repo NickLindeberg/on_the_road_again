@@ -4,6 +4,7 @@ Date: <%= @event.show_date  %> <br>
 Time: <%= @event.show_time  %>
   <section class="Venue info">
     Where: <%= @venue.name %>
+    <%= link_to "Venue Information", venue_path(@venue.songkick_id), :class => "btn btn-info btn-lg"  %>
 </section>
 
 <br>
