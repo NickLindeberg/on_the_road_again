@@ -62,7 +62,7 @@ describe "Events" do
 
       artist = create(:artist)
       tour = create(:tour, artist_id: artist.id)
-      event_1 = create(:event, tour_id: tour.id, show_date: "2018-02-11 21:10:51", event_profit: "200.00", travel_cost: "150.00" )
+      event_1 = create(:event, tour_id: tour.id, show_date: "2018-02-11 21:10:51", event_profit: 200.00, travel_cost: 150.00 )
 
       allow_any_instance_of(ApplicationController).to receive(:current_artist).and_return(artist)
 
