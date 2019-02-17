@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_02_16_224655) do
 
   create_table "events", force: :cascade do |t|
     t.text "name"
-    t.string "show_time"
+    t.datetime "show_time"
     t.bigint "tour_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
