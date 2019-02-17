@@ -24,11 +24,7 @@
    background-position: 50% 50%;
  }
 
- h1 {
-   color: white;
- }
- 
- h3 {
+ h1, h2, h3 {
    color: white;
  }
 
@@ -111,11 +107,11 @@ ul {
 
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
+  background-color: black;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 90%;
+  width: 40%;
 }
 
 /* The Close Button */
@@ -131,4 +127,8 @@ ul {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.form-control {
+  width: 20%;
 }
