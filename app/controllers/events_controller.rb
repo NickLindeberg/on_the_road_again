@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   def create
     tour = Tour.find_by(id: params[:tour_id])
     x = tour.events.create(event_params)
-    flash[:notice] = "Event Added"
+
     redirect_to new_tour_event_path
   end
 
@@ -34,7 +34,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :show_time, :venue_id)
+    params.require(:event).permit(:name, :show_time, :venue_id, :show_date)
   end
 
   def service_venue
