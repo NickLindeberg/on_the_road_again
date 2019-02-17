@@ -4,4 +4,9 @@ class SessionsController < ApplicationController
     session[:artist_id] = @artist.id
     redirect_to dashboard_path
   end
+
+  def destroy
+    session[:artist_id] = nil
+    redirect_to root_path
+  end
 end
