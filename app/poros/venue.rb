@@ -6,7 +6,7 @@ class Venue
     @name = venue_data[:displayName]
     @address = venue_data[:street]
     @city = venue_data[:city][:displayName]
-    @state = venue_data[:city][:state][:displayName]
+    @state = venue_data[:metroArea][:state][:displayName]
     @website = venue_data[:website]
     @phone = venue_data[:phone]
     @zip = venue_data[:zip]
