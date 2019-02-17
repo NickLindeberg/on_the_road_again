@@ -13,6 +13,8 @@ describe 'Artist can create a tour' do
 
     fill_in "tour[name]", with: "Rad Tour"
     click_on "Create Tour"
-    expect(current_path).to eq(dashboard_path)
+
+    tour = Tour.last
+    expect(current_path).to eq(new_tour_event_path(tour.id))
   end
 end
