@@ -12,7 +12,6 @@ Time: <%= @event.show_time  %>
   <h2>Profit Statistics</h2>
   Gig Profit: <%=@event.event_profit  %> <br>
   Travel cost: <%=@event.travel_cost  %> <br>
-  Total Revenue: <%=number_to_currency(@event.total_profit)  %>
 
 <% elsif @current_artist && @event.show_date.past? %>
     <h2>Add Profit Statistics</h2>
