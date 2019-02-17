@@ -1,4 +1,4 @@
-<h1>Venue Show Page</h1>
+<h1><%=@venue.name %> Show Page</h1>
 
   <ul>
     <li><%= @venue.name%></li>
@@ -9,7 +9,7 @@
   <div class="future-tours col-lg">
       Future Events
       <div class="f-tours">
-        <% @venue.events.each do |event| %>
+        <% @events.each do |event| %>
         <% if event.show_time > Time.now %>
           <ul>
             <li><%= event.name %></li>
@@ -23,7 +23,7 @@
     <div class="past-tours col-lg">
       Past Events
       <div class="p-tours">
-        <% @venue.events.each do |event| %>
+        <% @events.each do |event| %>
         <% if event.show_time < Time.now %>
           <ul>
             <li><%= event.name %></li>
