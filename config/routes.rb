@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :venues, only: [:show]
   resources :events
-  resources :tours, only: [:show, :new, :create, :edit, :update]
+  resources :tours, only: [:show, :new, :create, :edit, :update] do
+    resources :events, only: [:new, :create]
+  end
 
   get '/login', to: redirect('/auth/google_oauth2'), as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
