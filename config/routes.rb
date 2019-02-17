@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: "artists#show"
 
   resources :venues, only: [:show]
-  resources :events, only: [:show, :new, :create, :edit, :update]
+  resources :events
   resources :tours, only: [:show, :new, :create, :edit, :update]
 
   get '/login', to: redirect('/auth/google_oauth2'), as: 'login'
