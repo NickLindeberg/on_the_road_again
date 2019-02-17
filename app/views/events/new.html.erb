@@ -1,34 +1,44 @@
 <h1><%= @tour.name %></h1>
 
-<%= form_for [@tour, @events] do |e| %>
-   <div>
-     <%= e.text_field :name, placeholder: "Event Name" %>
-   </div>
-   <div>
-     <%= e.date_field :show_time %>
-   </div>
-   <h3>Enter A City To Find Venues</h3>
-   <div>
-     <%= form_tag :new_tour_event, method: :get, class: "form-inline" do %>
-       <div class="form-group search-field">
-         <%= text_field_tag :q, "", class: "form-control" %>
-         <%= submit_tag "Locate", id: 'myBtn', class: "btn btn-primary" %>
-       </div>
-     <% end %>
-   </div>
-   <div><%= e.submit %></div>
- <% end %>
+<%= form_for [@tour, @events], :remote => true do |e| %>
+  <div>
+    <button id="myBtn" class="btn btn-info btn-lg" type="button">Search City</button>
+  </div>
+  <br>
+  <div>
+    <%= e.select :venue_id, options_for_select(@venues.map{|ven| ["#{ven.name}", ven.name, ven.songkick_id] }) %>
+  </div>
+  <div>
+    <%= e.text_field :name, placeholder: "Event Name" %>
+  </div>
+  <div>
+    <%= e.date_field :show_time %>
+  </div>
+  <br>
+    <%= e.submit class:"btn btn-info btn-lg" %>
+<% end %>
 
+  <br>
 
+  <%= link_to "Tour Booked", dashboard_path, class:"btn btn-info btn-lg" %>
+
+  <h1>Scheduled Events</h1>
+  <% @tour.events.each do |event| %>
+    <h2><%= event.name %></h2>
+    <h2><%= event.show_time %></h2>
+    <br>
+  <% end %>
 
   <div id="myModal" class="modal">
     <div class="modal-content">
+      <h3>Enter A City To Find Venues</h3>
       <span class="close">&times;</span>
-      <% @venues.map do |v| %>
-        <%= v.name %>
+
+      <%= form_tag :new_tour_event, method: :get, class: "form" do %>
+          <%= text_field_tag :q, ""%>
+          <br>
+          <%= submit_tag "Locate", lass: "btn-primary"%>
       <% end %>
-      <br>
-    </div>
   </div>
 
  <script>
@@ -41,6 +51,8 @@
  // Get the <span> element that closes the modal
  var span = document.getElementsByClassName("close")[0];
 
+ var search = document.getElementById("search");
+
  // When the user clicks the button, open the modal
  btn.onclick = function() {
    modal.style.display = "block";
@@ -49,12 +61,5 @@
  // When the user clicks on <span> (x), close the modal
  span.onclick = function() {
    modal.style.display = "none";
- }
-
- // When the user clicks anywhere outside of the modal, close it
- window.onclick = function(event) {
-   if (event.target == modal) {
-     modal.style.display = "none";
-   }
  }
  </script>
