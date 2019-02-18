@@ -29,12 +29,10 @@ describe 'user dashboard' do
     event_3 = create(:event, tour_id: tour_2.id, show_date: "2021-02-11 21:10:51" )
     event_3 = create(:event, tour_id: tour_2.id, show_date: "2015-02-11 21:10:51" )
 
-
-    # binding.pry
     allow_any_instance_of(ApplicationController).to receive(:current_artist).and_return(artist_1)
     visit dashboard_path
 
-    expect(page).to have_content(tour_1)
-    expect(page).to have_content(tour_2)
+    expect(page).to have_content(tour_1.name)
+    expect(page).to have_content(tour_2.name)
   end
 end
