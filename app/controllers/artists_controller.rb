@@ -2,6 +2,7 @@ class ArtistsController < ApplicationController
 
   def show
     @current_artist = current_artist
+    # binding.pry
     if @current_artist
     else
       redirect_to '/'
