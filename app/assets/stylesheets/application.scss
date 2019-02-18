@@ -24,8 +24,30 @@
    background-position: 50% 50%;
  }
 
+ .logo img {
+  background-image: asset_url('logo.png');
+  width: 50%;
+  border-radius: 50px;
+  min-width: 500px;
+  opacity: 0.9;
+}
+
  h1, h2, h3 {
    color: white;
+ }
+
+ .box {
+   background-color: black;
+   opacity: 0.9;
+   width: 50%;
+   text-align: center;
+   align-self: center;
+   display: inline-block;
+   border-radius: 25px;
+   padding-top: 25px;
+   padding-bottom: 25px;
+   min-width: 500px;
+   margin-top: 50px;
  }
 
  .band-name {
