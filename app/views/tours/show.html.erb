@@ -1,13 +1,29 @@
-<h1><%= @tour.name%> Show Page</h1>
-<p>By: <%= @tour.artist.name %></p>
+<div class="split left">
+  <div class="centered">
+    <h1><%= @tour.name%> Show Page</h1>
+      <p>By: <%= @tour.artist.name %></p>
 
-<% @tour.events.each do |event| %>
-  <% if event.show_date > Time.now %>
-    <h2><%= event.name %></h2>
-      <p class ="d-inline"><%= link_to "Edit Event", edit_event_path(event) %></p> |
-      <p class ="d-inline"><%= link_to "Delete Event", event_path(event), method: :delete %></p> |
-    <% else %>
-    <h2><%= event.name %></h2>
-      <p>Event was <%= distance_of_time_in_words_to_now(event.show_date) %> ago!</p>
-  <% end %>
-<% end %>
+      <% @tour.events.each do |event| %>
+        <% if event.show_date > Time.now %>
+          <h2><%= event.name %></h2>
+          <p class ="d-inline"><%= link_to "Edit Event", edit_event_path(event) %></p> |
+          <p class ="d-inline"><%= link_to "Delete Event", event_path(event), method: :delete %></p> |
+        <% else %>
+          <h2><%= event.name %></h2>
+          <p>Event was <%= distance_of_time_in_words_to_now(event.show_date) %> ago!</p>
+        <% end %>
+      <% end %>
+  </div>
+</div>
+
+<div class="split right">
+  <div class="centered">
+    <h1><%= @tour.name%> Show Statistics</h1>
+    <h2>Total Revenue:</h2>
+    <h3><%= number_to_currency(@events.event_gains(@tour)) %></h3>
+    <h2>Total Expenses</h2>
+    <h3><%= number_to_currency(@events.travel_cost(@tour)) %></h3>
+    <h2>Net Profit</h2>
+    <h3><%= number_to_currency(@events.event_gains(@tour) - @events.travel_cost(@tour)) %></h3>
+  </div>
+</div>
