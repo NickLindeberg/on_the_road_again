@@ -10,7 +10,8 @@ describe 'visitor can see nav bar' do
 
     expect(current_path).to eq('/about')
 
-    click_link "On The Road Again"
+
+    first(:link, "On The Road Again").click
 
     expect(current_path).to eq('/')
   end
