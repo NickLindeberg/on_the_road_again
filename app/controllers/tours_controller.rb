@@ -13,6 +13,7 @@ class ToursController < ApplicationController
 
   def show
     @tour = Tour.find(params[:id])
+    @events = @tour.events
   end
 
   private
