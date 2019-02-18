@@ -15,15 +15,18 @@ Hello! <%= @current_artist.name  %>
   <%= link_to "Add New Tour", new_tour_path, :class => "btn btn-info btn-lg"  %>
 
   <div class="row">
-
+<% if @future_tours  %>
     <div class="future-tours col-lg">
       Future Tours
+      <% @future_tours.each do |tour| %>
       <div class="f-tours">
-        <a href="/tours/3">Tour 3</a>
+        <a href="tour_path(tour.id)"> <%= tour.name %> </a>
         <br>
-        <a href="/tours/4">Tour 4</a>
       </div>
+      <% end  %>
     </div>
+<% end %>
+
     <div class="past-tours col-lg">
       Past Tours
       <div class="p-tours">
