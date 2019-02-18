@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Artist can create a tour' do
-  xit 'names a tour' do
+  it 'names a tour' do
     artist = create(:artist)
     allow_any_instance_of(ApplicationController).to receive(:current_artist).and_return(artist)
 

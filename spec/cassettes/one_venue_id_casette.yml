@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.songkick.com/api/3.0/venues/10459.json?apikey=hhbQo0LmrgniD7x1
+    uri: https://api.songkick.com/api/3.0/venues/10459.json?apikey=<SONGKICK_API_KEY>
     body:
       encoding: US-ASCII
       string: ''
@@ -23,16 +23,16 @@ http_interactions:
       Cache-Control:
       - private, max-age=3600
       Expires:
-      - Sun, 17 Feb 2019 20:29:50 GMT
+      - Mon, 18 Feb 2019 00:42:10 GMT
       X-Request-Id:
-      - 89eb7194112dcb6c4cb4cf5fe1ed17e3
+      - cd9c8bcbc22772c355996c48127ea64e
       Accept-Ranges:
       - bytes
       - bytes
       Content-Length:
       - '362'
       Date:
-      - Sun, 17 Feb 2019 19:29:50 GMT
+      - Sun, 17 Feb 2019 23:42:10 GMT
       Age:
       - '0'
       Connection:
@@ -42,12 +42,12 @@ http_interactions:
       Vary:
       - Origin,Access-Control-Request-Headers,Access-Control-Request-Method,Accept-Encoding
       X-Edge-Pop:
-      - Fastly/US-Central/DEN/cache-den19642-DEN
+      - Fastly/US-Central/DEN/cache-den19645-DEN
     body:
       encoding: ASCII-8BIT
       string: '{"resultsPage":{"status":"ok","results":{"venue":{"phone":"303-377-1666","lng":-104.948382,"street":"3317
         E. Colfax Ave (at Adams)","website":"http://www.bluebirdtheater.net","city":{"country":{"displayName":"US"},"uri":"http://www.songkick.com/metro_areas/6404-us-denver?utm_source=55502&utm_medium=partner","id":6404,"state":{"displayName":"CO"},"displayName":"Denver"},"zip":"80206","description":"","metroArea":{"country":{"displayName":"US"},"uri":"http://www.songkick.com/metro_areas/6404-us-denver?utm_source=55502&utm_medium=partner","id":6404,"state":{"displayName":"CO"},"displayName":"Denver"},"uri":"http://www.songkick.com/venues/10459-bluebird-theater?utm_source=55502&utm_medium=partner","capacity":400,"id":10459,"displayName":"Bluebird
         Theater","lat":39.7402806}}}}'
     http_version: 
-  recorded_at: Sun, 17 Feb 2019 19:29:50 GMT
+  recorded_at: Sun, 17 Feb 2019 23:42:10 GMT
 recorded_with: VCR 4.0.0
