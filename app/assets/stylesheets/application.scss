@@ -32,6 +32,19 @@
   opacity: 0.9;
 }
 
+form#new_tour.new_tour input{
+  text-align: center;
+  display: inline-block;
+}
+
+input#inputGroup-sizing-lg.input-group-text{
+  text-align: center;
+  display: inline-block;
+}
+
+
+
+
  h1, h2, h3 {
    color: white;
  }
@@ -49,6 +62,21 @@
    min-width: 500px;
    margin-top: 50px;
  }
+
+ .form-box {
+   background-color: teal;
+   opacity: 0.9;
+   width: 75%;
+   text-align: center;
+   align-self: center;
+   display: inline-block;
+   border-radius: 25px;
+   padding-top: 25px;
+   padding-bottom: 25px;
+   min-width: 500px;
+   margin-top: 50px;
+ }
+
 
  .band-name {
    background-color: blue;
@@ -132,8 +160,8 @@ ul {
   background-color: black;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
   width: 40%;
+  border-radius: 25px;
 }
 
 /* The Close Button */
