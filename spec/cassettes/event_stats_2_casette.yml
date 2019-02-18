@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.songkick.com/api/3.0/venues/1451.json?apikey=hhbQo0LmrgniD7x1
+    uri: https://api.songkick.com/api/3.0/venues/1451.json?apikey=<SONGKICK_API_KEY>
     body:
       encoding: US-ASCII
       string: ''
@@ -23,15 +23,15 @@ http_interactions:
       Cache-Control:
       - private, max-age=3600
       Expires:
-      - Mon, 18 Feb 2019 00:31:03 GMT
+      - Mon, 18 Feb 2019 00:41:35 GMT
       X-Request-Id:
-      - 80018ec3171105254c26a7a79be83479
+      - 4ea10df9dfc2d4c616ba00bbb968ca5f
       Content-Length:
       - '347'
       Accept-Ranges:
       - bytes
       Date:
-      - Sun, 17 Feb 2019 23:31:03 GMT
+      - Sun, 17 Feb 2019 23:41:35 GMT
       Connection:
       - keep-alive
       X-Cache:
@@ -39,16 +39,16 @@ http_interactions:
       Vary:
       - Origin,Access-Control-Request-Headers,Access-Control-Request-Method,Accept-Encoding
       X-Edge-Pop:
-      - Fastly/US-Central/DEN/cache-den19631-DEN
+      - Fastly/US-Central/DEN/cache-den19647-DEN
     body:
       encoding: ASCII-8BIT
       string: '{"resultsPage":{"status":"ok","results":{"venue":{"website":"http://www.foxtheatre.com/","street":"1135
         13th Street","displayName":"Fox Theatre","metroArea":{"displayName":"Denver","uri":"http://www.songkick.com/metro_areas/6404-us-denver?utm_source=55502&utm_medium=partner","country":{"displayName":"US"},"id":6404,"state":{"displayName":"CO"}},"zip":"80302","phone":"303.443.3399","description":"","city":{"displayName":"Boulder","country":{"displayName":"US"},"state":{"displayName":"CO"}},"capacity":500,"lat":40.0079953,"uri":"http://www.songkick.com/venues/1451-fox-theatre?utm_source=55502&utm_medium=partner","lng":-105.2762858,"id":1451}}}}'
     http_version: 
-  recorded_at: Sun, 17 Feb 2019 23:31:03 GMT
+  recorded_at: Sun, 17 Feb 2019 23:41:35 GMT
 - request:
     method: get
-    uri: https://api.songkick.com/api/3.0/venues/1451.json?apikey=hhbQo0LmrgniD7x1
+    uri: https://api.songkick.com/api/3.0/venues/1451.json?apikey=<SONGKICK_API_KEY>
     body:
       encoding: US-ASCII
       string: ''
@@ -69,15 +69,15 @@ http_interactions:
       Cache-Control:
       - private, max-age=3600
       Expires:
-      - Mon, 18 Feb 2019 00:31:03 GMT
+      - Mon, 18 Feb 2019 00:41:36 GMT
       X-Request-Id:
-      - f1b07d846a7100b578e63c51220529aa
+      - 0bbb7d9773955e9573546783d896f0bc
       Content-Length:
       - '347'
       Accept-Ranges:
       - bytes
       Date:
-      - Sun, 17 Feb 2019 23:31:03 GMT
+      - Sun, 17 Feb 2019 23:41:36 GMT
       Connection:
       - keep-alive
       X-Cache:
@@ -85,11 +85,11 @@ http_interactions:
       Vary:
       - Origin,Access-Control-Request-Headers,Access-Control-Request-Method,Accept-Encoding
       X-Edge-Pop:
-      - Fastly/US-Central/DEN/cache-den19648-DEN
+      - Fastly/US-Central/DEN/cache-den19649-DEN
     body:
       encoding: ASCII-8BIT
       string: '{"resultsPage":{"status":"ok","results":{"venue":{"website":"http://www.foxtheatre.com/","street":"1135
         13th Street","displayName":"Fox Theatre","metroArea":{"displayName":"Denver","uri":"http://www.songkick.com/metro_areas/6404-us-denver?utm_source=55502&utm_medium=partner","country":{"displayName":"US"},"id":6404,"state":{"displayName":"CO"}},"zip":"80302","phone":"303.443.3399","description":"","city":{"displayName":"Boulder","country":{"displayName":"US"},"state":{"displayName":"CO"}},"capacity":500,"lat":40.0079953,"uri":"http://www.songkick.com/venues/1451-fox-theatre?utm_source=55502&utm_medium=partner","lng":-105.2762858,"id":1451}}}}'
     http_version: 
-  recorded_at: Sun, 17 Feb 2019 23:31:04 GMT
+  recorded_at: Sun, 17 Feb 2019 23:41:36 GMT
 recorded_with: VCR 4.0.0

@@ -15,4 +15,21 @@ describe 'user dashboard' do
     expect(current_path).to eq(dashboard_path)
     expect(page).to have_content("Jimmy and the Jets")
   end
+
+  it 'user can see future toures' do
+    artist_1 = create(:artist)
+    tour_1 = create(:tour, artist_id: artist_1.id)
+    tour_2 = create(:tour, artist_id: artist_1.id)
+    event_1 = create(:event, tour_id: tour_1.id, show_date: "2020-02-11 21:10:51" )
+    event_2 = create(:event, tour_id: tour_1.id, show_date: "2021-02-11 21:10:51" )
+    event_3 = create(:event, tour_id: tour_2.id, show_date: "2022-02-11 21:10:51" )
+
+
+    allow_any_instance_of(ApplicationController).to receive(:current_artist).and_return(artist_1)
+
+    visit dashboard_path
+
+    expect(page).to have_content(tour_1)
+    expect(page).to have_content(tour_2)
+  end
 end
