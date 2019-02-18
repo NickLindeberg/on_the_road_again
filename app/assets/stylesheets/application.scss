@@ -24,41 +24,74 @@
    background-position: 50% 50%;
  }
 
+ .logo img {
+  background-image: asset_url('logo.png');
+  width: 50%;
+  border-radius: 50px;
+  min-width: 500px;
+  opacity: 0.9;
+}
+
+form#new_tour.new_tour input{
+  text-align: center;
+  display: inline-block;
+}
+
+input#inputGroup-sizing-lg.input-group-text{
+  text-align: center;
+  display: inline-block;
+}
+
  h1, h2, h3 {
    color: white;
  }
 
- .band-name {
-   background-color: blue;
+ .box {
+   background-color: black;
    opacity: 0.9;
+   width: 50%;
+   text-align: center;
+   align-self: center;
+   display: inline-block;
+   border-radius: 25px;
+   padding-top: 25px;
+   padding-bottom: 25px;
+   min-width: 500px;
+   margin-top: 50px;
+ }
+
+ .form-box {
+   background-color: teal;
+   opacity: 0.9;
+   width: 75%;
+   text-align: center;
+   align-self: center;
+   display: inline-block;
+   border-radius: 25px;
+   padding-top: 25px;
+   padding-bottom: 25px;
+   min-width: 500px;
+   margin-top: 50px;
+ }
+
+
+ .band-name {
+   background-color: black;
+   opacity: 0.8;
    margin-left: 50px;
    margin-right: 50px;
    font-size: 75px;
+   border-radius: 50px;
  }
 
- .band-stats {
-   background-color: teal;
-   opacity: 0.9;
-   margin-left: 50px;
-   margin-right: 50px;
-   font-size: 75px; }
-
- .future-tours {
-   background-color: #15A2B8;
+ .tours {
+   background-color: black;
    font-size: 50px;
-   opacity: 0.9;
+   opacity: 0.8;
    margin-left: 50px;
    margin-right: 50px;
    margin-top: 5px;
- }
-
- .past-tours {
-   background-color: pink;
-   font-size: 50px;
-   opacity: 0.9;
-   margin-left: 50px;
-   margin-right: 50px;
-   margin-top: 5px;
+   border-radius: 50px;
  }
 
  .jumbotron {
@@ -110,8 +143,8 @@ ul {
   background-color: black;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
   width: 40%;
+  border-radius: 25px;
 }
 
 /* The Close Button */
