@@ -42,9 +42,6 @@ input#inputGroup-sizing-lg.input-group-text{
   display: inline-block;
 }
 
-
-
-
  h1, h2, h3 {
    color: white;
  }
@@ -79,36 +76,22 @@ input#inputGroup-sizing-lg.input-group-text{
 
 
  .band-name {
-   background-color: blue;
-   opacity: 0.9;
+   background-color: black;
+   opacity: 0.8;
    margin-left: 50px;
    margin-right: 50px;
    font-size: 75px;
+   border-radius: 50px;
  }
 
- .band-stats {
-   background-color: teal;
-   opacity: 0.9;
-   margin-left: 50px;
-   margin-right: 50px;
-   font-size: 75px; }
-
- .future-tours {
-   background-color: #15A2B8;
+ .tours {
+   background-color: black;
    font-size: 50px;
-   opacity: 0.9;
+   opacity: 0.8;
    margin-left: 50px;
    margin-right: 50px;
    margin-top: 5px;
- }
-
- .past-tours {
-   background-color: pink;
-   font-size: 50px;
-   opacity: 0.9;
-   margin-left: 50px;
-   margin-right: 50px;
-   margin-top: 5px;
+   border-radius: 50px;
  }
 
  .jumbotron {
