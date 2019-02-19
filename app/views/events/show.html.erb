@@ -1,32 +1,32 @@
-<h1> <%= @event.name %> </h1>
-<section class="Event info">
-Date: <%= @event.show_date  %> <br>
-Time: <%= @event.show_time  %>
-  <section class="Venue info">
-    Where: <%= @venue.name %>
-    <%= link_to "Venue Information", venue_path(@venue.songkick_id), :class => "btn btn-info btn-lg"  %>
-</section>
+<div class="box">
+  <h1> <%= @event.name %> </h1>
+  <section class="Event info">
+  <h2>Where: <%= link_to @venue.name, venue_path(@venue.songkick_id), :class => "btn btn-info btn-lg" %></h2>
+  <h3>Date: <%= @event.show_date  %> </h3>
+  <h3>Time: <%= @event.show_time  %></h3>
 
-<br>
-  <section class="stats">
-<% if @current_artist && @event.event_profit %>
-  <h2>Profit Statistics</h2>
-  Gig Profit: <%=@event.event_profit  %> <br>
-  Travel cost: <%=@event.travel_cost  %> <br>
-  Total Profit: <%= number_to_currency(@event.total_profit, precision: 2) %>
 
-<% elsif @current_artist && @event.show_date.past? %>
-    <h2>Add Profit Statistics</h2>
-    <%= form_for @event do |f| %>
+  <br>
+    <section class="stats">
+  <% if @current_artist && @event.event_profit %>
+    <h2><u>Event Statistics</u></h2>
+    <h3>Gig Profit: <%=number_to_currency(@event.event_profit)  %></h3>
+    <h3>Travel cost: <%=number_to_currency(@event.travel_cost)  %></h3>
+    <h3>Total Profit: <%= number_to_currency(@event.total_profit, precision: 2) %></h3>
 
-    <%= f.label 'Gig Profit' %><br>
-    <%= f.text_field :event_profit %><br>
+  <% elsif @current_artist && @event.show_date.past? %>
+      <h2>Add Profit Statistics</h2>
+      <%= form_for @event do |f| %>
 
-    <%= f.label 'Travel Cost' %><br>
-    <%= f.text_area :travel_cost %><br>
+      <%= f.label 'Gig Profit' %><br>
+      <%= f.text_field :event_profit %><br>
 
-    <%= f.submit "Calculate Profit" %>
+      <%= f.label 'Travel Cost' %><br>
+      <%= f.text_area :travel_cost %><br>
+
+      <%= f.submit "Calculate Profit" %>
+    <% end %>
+    </section>
+  <% else  %>
   <% end %>
-  </section>
-<% else  %>
-<% end %>
+</div>
