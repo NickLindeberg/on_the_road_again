@@ -4,7 +4,6 @@ class ArtistsController < ApplicationController
     @current_artist = current_artist
     @future_tours = current_artist.future_tours
     @past_tours = current_artist.past_tours
-    # binding.pry
     if @current_artist
     else
       redirect_to '/'
