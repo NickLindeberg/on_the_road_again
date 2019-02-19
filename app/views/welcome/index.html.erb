@@ -1,1 +1,11 @@
-<%= link_to "Login/Register", register_path, :class => "btn btn-info btn-lg"  %>
+<h1>Welcome!</h1>
+
+
+<% unless current_artist %>
+<h1>Please Login or Register!</h1>
+  <%= link_to "Login/Register", register_path, :class => "btn btn-info btn-lg"  %>
+<% end %>
+
+<div class="logo">
+  <%= image_tag("logo.png") %>
+</div>

@@ -1,7 +1,11 @@
-<%= form_for @tour do |b| %>
-   <div>
-     <%= b.label :name %>
-     <%= b.text_field :name %>
-   </div>
-   <div><%= b.submit %></div>
- <% end %>
+
+<div class="box">
+
+  <h1>Tour Name</h1>
+  <%= form_for @tour do |b| %>
+     <div class="form-group">
+       <%= b.text_field :name, class:"input-group-text", id:"inputGroup-sizing-lg"%>
+     </div>
+     <div><%= b.submit class:"btn btn-info mb-2" %></div>
+  <% end %>
+</div>
