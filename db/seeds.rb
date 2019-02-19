@@ -13,6 +13,7 @@ Artist.create!(name: Faker::Music::RockBand.name, email: "rigid_spinal@google.co
 Tour.create!(name: "One In A Million Tour", artist_id: 1)
 Tour.create!(name: "On The Run Tour", artist_id: 2)
 Tour.create!(name: "In My Feelings Tour", artist_id: 3)
+Tour.create!(name: "Cold Brew Tour", artist_id: 3)
 
 Event.create!(name: "Baffling Belligerent Bodacious Bovines", show_date: "2018-02-01", show_time: "18:00", venue_id: 1, tour_id: 1, event_profit: 500, travel_cost: 200)
 Event.create!(name: "Rambunctious Robust Rhuberry Rhinos", show_date: "2020-02-01", show_time: "19:00", venue_id: 1, tour_id: 1, event_profit: 600, travel_cost: 375)

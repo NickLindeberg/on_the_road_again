@@ -42,7 +42,7 @@ input#inputGroup-sizing-lg.input-group-text{
   display: inline-block;
 }
 
- h1, h2, h3 {
+ h1, h2, h3, h4 {
    color: white;
  }
 
@@ -74,6 +74,21 @@ input#inputGroup-sizing-lg.input-group-text{
    margin-top: 50px;
  }
 
+ .tour-box {
+   background-color: black;
+   opacity: 0.9;
+   width: 40%;
+   text-align: center;
+   align-self: center;
+   display: inline-block;
+   border-radius: 25px;
+   padding-top: 25px;
+   padding-bottom: 25px;
+   min-width: 500px;
+   margin-top: 50px;
+   margin-left: 25px;
+   margin-right: 25px;
+ }
 
  .band-name {
    background-color: black;
@@ -167,11 +182,11 @@ ul {
 }
 
 .split {
-  height: 110%;
+  height: 120%;
   width: 50%;
-  position: fixed;
+  position: absolte;
   z-index: 1;
-  top: 0;
+  top: 500;
   overflow-x: hidden;
   padding-top: 20px;
 }
