@@ -13,7 +13,7 @@ describe 'User can visit tour show page' do
     expect(page).to have_content("By: #{artist.name}")
   end
 
-  xit 'user can visit tour show throught the dashboard' do
+  it 'user can visit tour show throught the dashboard' do
     artist_1 = create(:artist)
 
     tour_1 = create(:tour, artist_id: artist_1.id)
