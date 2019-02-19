@@ -16,7 +16,7 @@ gem 'factory_bot_rails'
 gem 'bundler', '~> 2.0.1'
 gem 'omniauth-google-oauth2'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
-
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -30,7 +30,6 @@ group :development, :test do
   gem 'figaro'
   gem 'simplecov'
   gem 'vcr'
-  gem 'factory_bot_rails'
 end
 
 group :development do
