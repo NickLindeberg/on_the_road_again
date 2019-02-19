@@ -23,9 +23,9 @@ http_interactions:
       Cache-Control:
       - private, max-age=3600
       Expires:
-      - Mon, 18 Feb 2019 23:28:35 GMT
+      - Tue, 19 Feb 2019 19:46:42 GMT
       X-Request-Id:
-      - 6120ee543066c4429c70d8fe713b9fc7
+      - cf4c562ed0bf6cdf4830d8af74ccc44d
       Accept-Ranges:
       - bytes
       - bytes
@@ -35,7 +35,7 @@ http_interactions:
       Content-Length:
       - '362'
       Date:
-      - Mon, 18 Feb 2019 22:28:35 GMT
+      - Tue, 19 Feb 2019 18:46:42 GMT
       Connection:
       - keep-alive
       X-Cache:
@@ -43,12 +43,12 @@ http_interactions:
       Vary:
       - Origin,Access-Control-Request-Headers,Access-Control-Request-Method,Accept-Encoding
       X-Edge-Pop:
-      - Fastly/US-Central/DEN/cache-den19647-DEN
+      - Fastly/US-Central/DEN/cache-den19642-DEN
     body:
       encoding: ASCII-8BIT
       string: '{"resultsPage":{"status":"ok","results":{"venue":{"phone":"303-377-1666","lng":-104.948382,"street":"3317
         E. Colfax Ave (at Adams)","website":"http://www.bluebirdtheater.net","city":{"country":{"displayName":"US"},"uri":"http://www.songkick.com/metro_areas/6404-us-denver?utm_source=55502&utm_medium=partner","id":6404,"state":{"displayName":"CO"},"displayName":"Denver"},"zip":"80206","description":"","metroArea":{"country":{"displayName":"US"},"uri":"http://www.songkick.com/metro_areas/6404-us-denver?utm_source=55502&utm_medium=partner","id":6404,"state":{"displayName":"CO"},"displayName":"Denver"},"uri":"http://www.songkick.com/venues/10459-bluebird-theater?utm_source=55502&utm_medium=partner","capacity":400,"id":10459,"displayName":"Bluebird
         Theater","lat":39.7402806}}}}'
     http_version: 
-  recorded_at: Mon, 18 Feb 2019 22:28:35 GMT
+  recorded_at: Tue, 19 Feb 2019 18:46:42 GMT
 recorded_with: VCR 4.0.0
