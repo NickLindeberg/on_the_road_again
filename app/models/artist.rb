@@ -11,4 +11,20 @@ class Artist < ApplicationRecord
   	artist.save
     artist
   end
+
+  def future_tours
+    tours.map do |tour|
+      if tour.future_events? == true
+        tour
+      end
+    end.compact
+  end
+
+  def past_tours
+    tours.map do |tour|
+      if tour.past_events? == true
+        tour
+      end
+    end.compact
+  end
 end
