@@ -16,6 +16,11 @@ class ToursController < ApplicationController
     @events = @tour.events
   end
 
+  def destroy
+    Tour.destroy(params[:id])
+    redirect_to dashboard_path
+  end
+
   private
 
   def  tour_params
