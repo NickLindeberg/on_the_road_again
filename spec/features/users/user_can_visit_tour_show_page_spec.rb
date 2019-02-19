@@ -9,7 +9,7 @@ describe 'User can visit tour show page' do
     visit tour_path(tour)
 
     expect(current_path).to eq(tour_path(tour))
-    expect(page).to have_content("#{tour.name} Show Page")
+    expect(page).to have_content("#{tour.name}")
     expect(page).to have_content("By: #{artist.name}")
   end
 

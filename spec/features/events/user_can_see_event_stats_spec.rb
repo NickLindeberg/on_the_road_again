@@ -24,12 +24,13 @@ describe "Events" do
       artist = create(:artist)
       tour = create(:tour, artist_id: artist.id)
       event_1 = create(:event, tour_id: tour.id)
+      venue = VenueBuilderFacade.new.find_single_venue_by_id(event_1.venue_id)
 
       allow_any_instance_of(ApplicationController).to receive(:current_artist).and_return(artist)
 
       visit event_path(event_1.id)
 
-      click_on("Venue Information")
+      click_on(venue.name)
       expect(current_path).to eq(venue_path(event_1.venue_id))
     end
   end
@@ -69,7 +70,7 @@ describe "Events" do
 
       visit event_path(event_1.id)
 
-      expect(page).to have_content("Profit Statistics")
+      expect(page).to have_content("Event Statistics")
       expect(page).to  have_content(event_1.event_profit)
       expect(page).to  have_content(event_1.travel_cost)
     end
