@@ -1,5 +1,5 @@
-<% if @current_artist.band_name %>
 <div class="container-fluid">
+  <% if @current_artist.band_name %>
   <div class="row">
     <h1 class="band-name col-lg"> <%= @current_artist.band_name %> </h1>
   </div>
@@ -10,8 +10,8 @@
   <%= link_to "Add New Tour", new_tour_path, :class => "btn btn-info btn-lg"  %>
 
   <div class="row">
-    <div class="future-tours col-lg">
-      Future Tours
+    <div class="tours col-lg">
+      <h2>Future Tours</h2>
       <% @future_tours.each do |tour| %>
       <div class="f-tours">
         <%= link_to "#{tour.name}", tour_path(tour.id), :class => "btn btn-info btn-lg"  %>
@@ -20,8 +20,8 @@
       <% end  %>
     </div>
 
-    <div class="past-tours col-lg">
-      Past Tours
+    <div class="tours col-lg">
+      <h2>Past Tours</h2>
       <%  @past_tours.each do |tour| %>
       <div class="p-tours">
         <%= link_to "#{tour.name}", tour_path(tour.id), :class => "btn btn-info btn-lg"  %>
