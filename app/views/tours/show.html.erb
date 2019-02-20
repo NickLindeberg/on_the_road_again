@@ -5,6 +5,7 @@
 
     <h1><%= @tour.name%></h1>
       <h3>By: <%= @tour.artist.band_name %></h3>
+      <p class ="d-inline btn btn-outline-info btn-sm"><%= link_to "Edit Tour", edit_tour_path(@tour) %></p>
 
       <% @tour.events.each do |event| %>
         <% if event.show_date > Time.now %>
