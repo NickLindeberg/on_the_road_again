@@ -11,7 +11,7 @@
         <% if event.show_date > Time.now %>
           <h2><%= link_to event.name, event_path(event) %></h2>
           <p class ="d-inline btn btn-outline-info btn-lg"><%= link_to "Edit Event", edit_event_path(event) %></p>
-          <p class ="d-inline btn btn-outline-info btn-lg"><%= link_to "Delete Event", event_path(event), method: :delete %></p>
+          <p class ="d-inline btn btn-outline-danger btn-lg"><%= link_to "Delete Event", event_path(event), method: :delete %></p>
         <% else %>
           <h2><%= link_to event.name, event_path(event) %></h2>
           <h4>Event was <%= distance_of_time_in_words_to_now(event.show_date) %> ago!</h4>
