@@ -72,7 +72,7 @@ RSpec.describe Tour, type: :model do
       event_2 = create(:event, name: "second", tour_id: tour.id, show_date: "2017-02-11 21:10:51" )
       event_3 = create(:event, name: "third", tour_id: tour.id, show_date: "2017-03-11 21:10:51" )
 
-      expect(tour.tour_start_date).to eq(event_1.show_date)
+      expect(tour.start_date).to eq(event_1.show_date)
     end
 
     it "#tour_end_date" do
@@ -82,7 +82,7 @@ RSpec.describe Tour, type: :model do
       event_2 = create(:event, name: "second", tour_id: tour.id, show_date: "2017-02-11 21:10:51" )
       event_3 = create(:event, name: "third", tour_id: tour.id, show_date: "2017-03-11 21:10:51" )
 
-      expect(tour.tour_end_date).to eq(event_3.show_date)
+      expect(tour.end_date).to eq(event_3.show_date)
     end
   end
 end
