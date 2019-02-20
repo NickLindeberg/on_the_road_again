@@ -48,6 +48,6 @@ describe 'User can visit tour show page' do
     fill_in "tour[name]", with: "Silver and the Jets"
     click_on("Update")
     expect(current_path).to eq(tour_path(tour_1))
-    # expect(page).to have_content("Silver and the Jets")
+    expect(page).to have_content("Silver and the Jets")
   end
 end
