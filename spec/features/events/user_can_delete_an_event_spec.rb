@@ -5,13 +5,16 @@ describe 'User can delete an event' do
     VCR.use_cassette("record-deletion") do
       artist = create(:artist)
       tour = create(:tour, artist:artist)
-      event = create_list(:event, 5, tour: tour)
+      event_1 = create(:event, tour_id: tour.id, show_date:"2020-03-11 21:10:51")
+      event_2 = create(:event, tour_id: tour.id, show_date:"2020-03-11 21:10:51")
       allow_any_instance_of(ApplicationController).to receive(:current_artist).and_return(artist)
-
+      expect(Event.count).to eq(2)
       visit tour_path(tour)
-      click_on "Delete Event"
-      expect(current_path).to eq(tour_path(event.tour))
-      expect(event.count).to eq(4)
+
+      first(:link, "Delete Event").click
+
+      expect(current_path).to eq(tour_path(tour))
+      expect(Event.count).to eq(1)
     end
   end
 end

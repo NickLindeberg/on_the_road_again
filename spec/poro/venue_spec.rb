@@ -21,7 +21,6 @@ describe "Venue" do
     expect(venue.name).to eq("Summit Music Hall")
     expect(venue.address).to eq("1902 Blake St.")
     expect(venue.city).to eq("Denver")
-    expect(venue.state).to eq("CO")
     expect(venue.website).to eq("http://www.sodajerkpresents.com")
     expect(venue.phone).to eq("123-525-1232")
     expect(venue.zip).to eq("80202")

@@ -67,11 +67,10 @@ input#inputGroup-sizing-lg.input-group-text{
    text-align: center;
    align-self: center;
    display: inline-block;
-   border-radius: 25px;
+   border-radius: 50px;
    padding-top: 25px;
    padding-bottom: 25px;
    min-width: 500px;
-   margin-top: 50px;
  }
 
  .tour-box {
@@ -160,11 +159,12 @@ ul {
   padding: 20px;
   width: 40%;
   border-radius: 25px;
+  opacity: 1.0;
 }
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  color: red;
   float: left;
   font-size: 28px;
   font-weight: bold;
@@ -172,7 +172,7 @@ ul {
 
 .close:hover,
 .close:focus {
-  color: #000;
+  color: red;
   text-decoration: none;
   cursor: pointer;
 }
@@ -182,7 +182,7 @@ ul {
 }
 
 .flash {
-  color: #F5F5F5;
+  color: red;
   border-radius: 4px;
   padding: 10px;
   margin: 0;
@@ -191,10 +191,10 @@ ul {
   box-shadow: #ffc 0 0 4px;
 
   &.notice {
-    background-color: #DBFFDD;
+    background-color: #3d0505;
   }
 
   &.alert {
-    background-color: #FFE1DE;
+    background-color: #3d0505;
   }
 }

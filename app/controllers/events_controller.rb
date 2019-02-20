@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   def create
     tour = Tour.find_by(id: params[:tour_id])
     x = tour.events.create(event_params)
-    flash[:notice] = "Succesfully created event!"
+    flash[:alert] = "Succesfully created #{x.name}!"
     redirect_to new_tour_event_path
   end
 

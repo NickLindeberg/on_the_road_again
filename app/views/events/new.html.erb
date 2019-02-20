@@ -1,5 +1,6 @@
-<h1><%= @tour.name %></h1>
 <div class="form-box">
+  <h1 class="band-name"><%= @tour.name %></h1>
+  <h1>Search For Venues</h1>
   <%= form_for [@tour, @events], :remote => true do |e| %>
     <div class="form-group">
       <button id="myBtn" class="btn btn-info btn-lg" type="button">Search City</button>
