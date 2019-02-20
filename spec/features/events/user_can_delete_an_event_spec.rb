@@ -9,6 +9,7 @@ describe 'User can delete an event' do
       allow_any_instance_of(ApplicationController).to receive(:current_artist).and_return(artist)
 
       visit tour_path(tour)
+      save_and_open_page
       click_on "Delete Event"
       expect(current_path).to eq(tour_path(event.tour))
       expect(event.count).to eq(4)
