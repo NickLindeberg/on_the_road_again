@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 2019_02_17_205214) do
     t.datetime "updated_at", null: false
     t.integer "venue_id"
     t.datetime "show_date"
-    t.decimal "event_profit"
-    t.decimal "travel_cost"
+    t.decimal "event_profit", default: "0.0"
+    t.decimal "travel_cost", default: "0.0"
     t.index ["tour_id"], name: "index_events_on_tour_id"
   end
 

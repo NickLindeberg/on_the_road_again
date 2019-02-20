@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'User can visit tour show page' do
   it 'sees tour data' do
-    artist = create(:artist)
+    artist = create(:artist, band_name: "Rad and the Rads")
     tour = create(:tour, artist: artist)
     allow_any_instance_of(ApplicationController).to receive(:current_artist).and_return(artist)
 
@@ -10,7 +10,7 @@ describe 'User can visit tour show page' do
 
     expect(current_path).to eq(tour_path(tour))
     expect(page).to have_content("#{tour.name}")
-    expect(page).to have_content("By: #{artist.name}")
+    expect(page).to have_content("By: #{artist.band_name}")
   end
 
   it 'user can visit tour show throught the dashboard' do

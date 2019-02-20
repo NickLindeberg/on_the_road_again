@@ -4,11 +4,8 @@
   <h2>Where: <%= link_to @venue.name, venue_path(@venue.songkick_id), :class => "btn btn-info btn-lg" %></h2>
   <h3>Date: <%= @event.show_date  %> </h3>
   <h3>Time: <%= @event.show_time  %></h3>
-
-
-  <br>
     <section class="stats">
-  <% if @current_artist && @event.event_profit %>
+  <% if @current_artist && @event.event_profit != 0 %>
     <h2><u>Event Statistics</u></h2>
     <h3>Gig Profit: <%=number_to_currency(@event.event_profit)  %></h3>
     <h3>Travel cost: <%=number_to_currency(@event.travel_cost)  %></h3>
