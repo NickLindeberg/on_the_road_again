@@ -64,5 +64,25 @@ RSpec.describe Tour, type: :model do
       expect(tour.future_events?).to eq(false)
       expect(tour_2.future_events?).to eq(true)
     end
+
+    it "#tour_start_date" do
+      artist_1 = create(:artist)
+      tour = create(:tour, artist_id: artist_1.id)
+      event_1 = create(:event, name: "first", tour_id: tour.id, show_date: "2017-01-11 21:10:51" )
+      event_2 = create(:event, name: "second", tour_id: tour.id, show_date: "2017-02-11 21:10:51" )
+      event_3 = create(:event, name: "third", tour_id: tour.id, show_date: "2017-03-11 21:10:51" )
+
+      expect(tour.start_date).to eq(event_1.show_date)
+    end
+
+    it "#tour_end_date" do
+      artist_1 = create(:artist)
+      tour = create(:tour, artist_id: artist_1.id)
+      event_1 = create(:event, name: "first", tour_id: tour.id, show_date: "2017-01-11 21:10:51" )
+      event_2 = create(:event, name: "second", tour_id: tour.id, show_date: "2017-02-11 21:10:51" )
+      event_3 = create(:event, name: "third", tour_id: tour.id, show_date: "2017-03-11 21:10:51" )
+
+      expect(tour.end_date).to eq(event_3.show_date)
+    end
   end
 end

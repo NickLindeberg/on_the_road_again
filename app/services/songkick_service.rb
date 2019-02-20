@@ -7,7 +7,6 @@ class SongkickService
 
   def get_venue_by_id(id)
     return [] unless id
-    # binding.pry
     get_json("venues/#{id}.json?apikey=#{ENV["SONGKICK_API_KEY"]}")[:resultsPage][:results][:venue]
   end
 

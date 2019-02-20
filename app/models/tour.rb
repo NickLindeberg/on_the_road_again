@@ -34,4 +34,14 @@ class Tour < ApplicationRecord
       false
     end
   end
+
+  def start_date
+    first_event = Event.order('show_date ASC').first
+    first_event.show_date
+  end
+
+  def end_date
+    first_event = Event.order('show_date DESC').first
+    first_event.show_date
+  end
 end
