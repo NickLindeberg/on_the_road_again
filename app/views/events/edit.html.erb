@@ -1,0 +1,16 @@
+<h1>Edit <%= @event.name %></h1>
+<div class="form-box">
+  <%= form_for(@event) do |f| %>
+     <div class="form-group">
+      <%= f.text_field :name, placeholder: "Event Name", class:"input-group-text", id:"inputGroup-sizing-lg" %>
+    </div>
+    <div class="form-group">
+      <%= f.date_field :show_date, class:"input-group-text", id:"inputGroup-sizing-lg" %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :show_time, placeholder: "Show Time", class:"input-group-text", id:"inputGroup-sizing-lg"  %>
+    </div>
+    <br>
+      <%= f.submit class:"btn btn-info btn-lg" %>
+  <% end %>
+</div>
