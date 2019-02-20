@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "tour show (artist dashboard)" do
-  xit "shows tour dates based on event dates" do
+  it "shows tour dates based on event dates" do
 
     artist = create(:artist)
     tour_0 = create(:tour, artist_id: artist.id, name: "Silver and the Jets")
@@ -13,8 +13,7 @@ describe "tour show (artist dashboard)" do
 
     visit dashboard_path
     expect(page).to have_content(tour_0.name)
-    expect(page).to have_content(event_0.show_date)
-    # expect(page)to have_content(event_2.show_date)
-
+    expect(page).to have_content(event_0.show_date.to_date)
+    expect(page).to have_content(event_2.show_date.to_date)
   end
 end
