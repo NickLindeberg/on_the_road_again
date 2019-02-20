@@ -21,6 +21,18 @@ class ToursController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def edit
+    @tour = current_artist.tours.find(params[:id])
+  end
+
+  def update
+    tour = current_artist.tours.find(params[:id])
+    tour.name = params[:tour][:name]
+    tour.save!
+    redirect_to tour_path(tour)
+  end
+
+
   private
 
   def  tour_params
