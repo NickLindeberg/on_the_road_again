@@ -15,7 +15,7 @@ describe "Artist tour" do
       visit dashboard_path
       expect(page).to have_content(tour_0.name)
       expect(artist.tours.count).to eq(1)
-      expect(page).to have_button("Delete Tour")
+      expect(page).to have_link("Delete Tour")
 
       click_on("Delete Tour")
       expect(artist.tours.count).to eq(0)
