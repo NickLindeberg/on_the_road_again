@@ -22,8 +22,15 @@ class EventsController < ApplicationController
   def create
     tour = Tour.find_by(id: params[:tour_id])
     x = tour.events.create(event_params)
-
+    flash[:notice] = "Succesfully created event!"
     redirect_to new_tour_event_path
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    flash[:alert] = "Succesfully deleted #{@event.name}!"
+    redirect_to tour_path(@event.tour)
   end
 
   private
