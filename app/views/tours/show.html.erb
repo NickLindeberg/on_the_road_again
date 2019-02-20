@@ -4,7 +4,7 @@
     <div class="col-lg">
 
     <h1><%= @tour.name%></h1>
-      <h3>By: <%= @tour.artist.name %></h3>
+      <h3>By: <%= @tour.artist.band_name %></h3>
 
       <% @tour.events.each do |event| %>
         <% if event.show_date > Time.now %>
