@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :artists, only: [:edit, :update]
   resources :venues, only: [:show]
   resources :events
-  resources :tours, only: [:show, :new, :create, :edit, :update] do
+  resources :tours, only: [:show, :new, :create, :edit, :update, :destroy] do
     resources :events, only: [:new, :create]
   end
 

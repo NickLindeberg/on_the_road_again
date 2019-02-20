@@ -1,0 +1,8 @@
+<h2>Edit Tour Name</h2>
+<%= form_for @tour do |f| %>
+
+<%= f.label 'Tour Name' %><br>
+<%= f.text_field :name %><br>
+
+<%= f.submit "Update" %>
+<% end %>
