@@ -12,7 +12,7 @@ describe "Events" do
 
       visit event_path(event_1.id)
       expect(page).to have_content(event_1.name)
-      expect(page).to have_content("Date: #{event_1.show_date}")
+      expect(page).to have_content("Date: #{event_1.show_date.to_date}")
       expect(page).to have_content("Time: #{event_1.show_time}")
       expect(page).to have_content("Where:")
     end

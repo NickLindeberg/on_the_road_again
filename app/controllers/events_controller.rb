@@ -12,7 +12,18 @@ class EventsController < ApplicationController
     @venue = service_venue.find_single_venue_by_id(@event.venue_id)
   end
 
+  def edit
+    @event = Event.find(params[:id])
+  end
+
   def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      redirect_to @event and return
+      flash[:notice] =  "#{@event.name} was successfully updated!"
+    else
+      render :new
+    end
     event_profit = params[:event][:event_profit].to_f
     travel_cost = params[:event][:travel_cost].to_f
     profit_stats_update(event_profit, travel_cost)
