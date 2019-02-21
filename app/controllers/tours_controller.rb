@@ -5,19 +5,19 @@ class ToursController < ApplicationController
   end
 
   def create
-    artist = current_artist
-    tour = artist.tours.create(tour_params)
+    tour = current_artist.tours.create(tour_params)
 
     redirect_to "/tours/#{tour.id}/events/new"
   end
 
   def show
-    @tour = Tour.find(params[:id])
+    @tour = current_artist.tours.find(params[:id])
     @events = @tour.events
   end
 
   def destroy
-    Tour.destroy(params[:id])
+    tour = current_artist.tours.find(params[:id])
+    tour.destroy
     redirect_to dashboard_path
   end
 
@@ -31,7 +31,6 @@ class ToursController < ApplicationController
     tour.save!
     redirect_to tour_path(tour)
   end
-
 
   private
 

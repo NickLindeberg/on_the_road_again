@@ -30,6 +30,10 @@ class Event < ApplicationRecord
     travel_expenses.sum.to_f
   end
 
+  def artist?
+    self.tour.artist
+  end
+
   def total_profit
     total = (self.event_profit - self.travel_cost)
     total
