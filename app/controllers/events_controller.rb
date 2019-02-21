@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
 
+
   def new
     @tour = Tour.find_by(id: params[:tour_id])
     @events = @tour.events.new
@@ -58,4 +59,5 @@ class EventsController < ApplicationController
   def service_venue
     VenueBuilderFacade.new
   end
+
 end
