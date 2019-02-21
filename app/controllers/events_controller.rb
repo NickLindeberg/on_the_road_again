@@ -9,11 +9,21 @@ class EventsController < ApplicationController
   def show
     @current_artist = current_artist
     @event = Event.find(params[:id])
-    @venue = service_venue.find_single_venue_by_id(@event.venue_id)
+    if @event.artist?
+      @venue = service_venue.find_single_venue_by_id(@event.venue_id)
+    else
+      render file: '/public/404'
+    end
   end
 
   def edit
     @event = Event.find(params[:id])
+    if @event.artist? == current_artist
+      @event
+    else
+      require "pry"; binding.pry
+      render file: '/public/404'
+    end
   end
 
   def update
@@ -31,7 +41,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    tour = Tour.find_by(id: params[:tour_id])
+    tour = current_artist.tours.find_by(id: params[:tour_id])
     x = tour.events.create(event_params)
     flash[:alert] = "Succesfully created #{x.name}!"
     redirect_to new_tour_event_path
@@ -45,6 +55,10 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def event_auth
+    @event.tour.artist_id == current_artist.id
+  end
 
   def profit_stats_update(event_profit, travel_cost)
     current_artist.events[0].update!(event_profit: event_profit)
