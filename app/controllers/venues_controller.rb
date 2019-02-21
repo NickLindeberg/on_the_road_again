@@ -5,5 +5,3 @@ class VenuesController < ApplicationController
     @venue = VenueBuilderFacade.new.find_single_venue_by_id(params[:id])
   end
 end
-
-
