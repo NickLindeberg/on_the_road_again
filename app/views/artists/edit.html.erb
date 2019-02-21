@@ -1,10 +1,10 @@
 <div class="box">
-  <h2>Edit Band Details </h2>
+  <h1>Edit Band Details </h1>
   <%= form_for @current_artist do |f| %>
 
-  <%= f.label 'Band Name' %><br>
+  <h3><%= f.label 'Band Name' %></h3>
   <%= f.text_field :band_name, class:"input-group-text", id:"inputGroup-sizing-lg"  %><br>
-
+    <br>
   <%= f.submit "Let's Roll!", class:"btn btn-info btn-lg" %>
   <% end %>
 </div>

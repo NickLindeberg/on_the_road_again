@@ -29,7 +29,7 @@
   <h1>Scheduled Events</h1>
     <% @tour.events.each do |event| %>
       <h2><%= event.name %></h2>
-      <h2><%= event.show_date %></h2>
+      <h2><%= event.show_date.to_s.to_date %></h2>
       <h2><%= event.show_time %></h2>
       <br>
     <% end %>
