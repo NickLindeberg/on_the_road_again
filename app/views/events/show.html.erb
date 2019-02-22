@@ -15,13 +15,15 @@
       <h2>Add Profit Statistics</h2>
       <%= form_for @event do |f| %>
 
-      <%= f.label 'Gig Profit' %><br>
-      <%= f.text_field :event_profit %><br>
-
-      <%= f.label 'Travel Cost' %><br>
-      <%= f.text_area :travel_cost %><br>
-
-      <%= f.submit "Calculate Profit" %>
+      <div class="form-group">
+        <h3><%= f.label 'Gig Profit' %><br></h3>
+        <%= f.number_field :event_profit, step: 0.01, placeholder: 0.00,  class:"input-group-text", id:"inputGroup-sizing-lg" %><br>
+      </div>
+      <div class="form-group">
+        <h3><%= f.label 'Travel Cost' %></h3>
+        <%= f.number_field :travel_cost, step: 0.01,  class:"input-group-text", id:"inputGroup-sizing-lg" %><br>
+      </div>
+      <%= f.submit "Calculate Profit", class:"btn btn-info btn-lg" %>
     <% end %>
     </section>
   <% else  %>
