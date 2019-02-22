@@ -1,7 +1,7 @@
 class VenuesController < ApplicationController
 
   def show
-    @events = current_artist.events.where(venue_id: params[:id])
+    @events = Event.where(venue_id: params[:id])
     @venue ||= @venue = VenueBuilderFacade.new.find_single_venue_by_id(params[:id])
   end
 end
