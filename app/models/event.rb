@@ -31,11 +31,11 @@ class Event < ApplicationRecord
   end
 
   def artist?
-    self.tour.artist
+    tour.artist
   end
 
   def total_profit
-    total = (self.event_profit - self.travel_cost)
+    total = (event_profit - travel_cost)
     total
   end
 end
