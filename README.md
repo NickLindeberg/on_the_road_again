@@ -15,3 +15,40 @@ OTRA is for anyone that is on the road performing.
 - Songkick for venue information
 - Google Maps
 
+### Dependencies 
+
+This project uses the following:
+
+ - Ruby 2.4.1
+ - Rails 5.2.2
+ - omniauth-google-oauth2
+ - rspec-rails
+ - figaro
+ 
+### Install 
+
+ - Clone the repo:
+ 
+ git@github.com:NickLindeberg/on_the_road_again.git
+ 
+ - Run:
+ 
+ bundle install
+ bundle update
+ 
+ - Setup the database:
+ 
+ rake db:{drop,create,migrate,seed}
+ 
+ ### Testing
+ 
+ Run the tests by running rspec into your command line.
+ 
+ ### Team
+ 
+ [Jimmy Smith](https://github.com/JSmith23) 
+ 
+ [Nick Lindeberg](https://github.com/NickLindeberg)
+ 
+ [Silvestre Cuellar](https://github.com/SiCuellar)
+
