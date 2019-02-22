@@ -4,16 +4,16 @@
     <ul>
       <h3><%= @venue.name%></h3>
       <h3><%= @venue.address%></h3>
-      <h3><%= link_to @venue.website, @venue.website%></h3>
+      <% if @venue.website %>
+        <h3><%= link_to @venue.website, @venue.website%></h3>
+      <% end %>
       <h3><%= @venue.phone%></h3>
     </ul>
     <div class="future-tours col-lg">
         <h2>Future Events:</h2>
         <div class="f-tours">
           <% @events.future_events.each do |event| %>
-            <ul>
-              <h3><%= event.name %></h3>
-            </ul>
+            <h3><%= event.name %></h3>
             <% end %>
             <% if @events.future_events.count < 1 %>
               <h2>Currently no forthcoming events.</h2>
@@ -24,9 +24,7 @@
         <h2>Past Events:</h2>
         <div class="p-tours">
           <% @events.past_events.each do |event| %>
-            <ul>
-              <h3><%= event.name %></h3>
-            </ul>
+              <h3><%= link_to event.name, event_path(event.id) %></h3>
             <% end %>
           <% if @events.past_events.count < 1 %>
             <h2>Currently no past events.</h2>
