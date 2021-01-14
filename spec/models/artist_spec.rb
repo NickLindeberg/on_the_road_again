@@ -13,36 +13,22 @@ RSpec.describe Artist, type: :model do
   end
 
   describe "Methods" do
+    let(:artist)        { create(:artist) }
+    let(:past_tour)     { create(:tour, artist_id: artist.id) }
+    let(:future_tour)   { create(:tour, artist_id: artist.id) }
+    let!(:future_event) { create(:event, tour_id: future_tour.id, show_date: 10.days.from_now) }
+    let!(:past_event)   { create(:event, tour_id: past_tour.id, show_date: 10.days.ago) }
+
     it "#future_tours" do
-      artist_1 = create(:artist)
-      tour = create(:tour, artist_id: artist_1.id)
-      event_1 = create(:event, tour_id: tour.id, show_date: "2022-02-11 21:10:51" )
-      event_2 = create(:event, tour_id: tour.id, show_date: "2020-02-11 21:10:51" )
-      event_3 = create(:event, tour_id: tour.id, show_date: "2021-02-11 21:10:51" )
-
-      tour_2 = create(:tour, artist_id: artist_1.id)
-      event_1 = create(:event, tour_id: tour_2.id, show_date: "2017-02-11 21:10:51" )
-      event_2 = create(:event, tour_id: tour_2.id, show_date: "2016-02-11 21:10:51" )
-      event_3 = create(:event, tour_id: tour_2.id, show_date: "2015-02-11 21:10:51" )
-
-      expect(artist_1.future_tours).to be_a(Array)
-      expect(artist_1.future_tours).to eq([tour])
+      expect(artist.future_tours).to be_a(Array)
+      expect(artist.future_tours).to eq([future_tour])
+      expect(artist.future_tours).not_to eq([past_tour])
     end
 
     it "#past_tours" do
-      artist_1 = create(:artist)
-      tour = create(:tour, artist_id: artist_1.id)
-      event_1 = create(:event, tour_id: tour.id, show_date: "2022-02-11 21:10:51" )
-      event_2 = create(:event, tour_id: tour.id, show_date: "2020-02-11 21:10:51" )
-      event_3 = create(:event, tour_id: tour.id, show_date: "2021-02-11 21:10:51" )
-
-      tour_2 = create(:tour, artist_id: artist_1.id)
-      event_1 = create(:event, tour_id: tour_2.id, show_date: "2017-02-11 21:10:51" )
-      event_2 = create(:event, tour_id: tour_2.id, show_date: "2016-02-11 21:10:51" )
-      event_3 = create(:event, tour_id: tour_2.id, show_date: "2015-02-11 21:10:51" )
-
-      expect(artist_1.past_tours).to be_a(Array)
-      expect(artist_1.past_tours).to eq([tour_2])
+      expect(artist.past_tours).to be_a(Array)
+      expect(artist.past_tours).to eq([past_tour])
+      expect(artist.past_tours).not_to eq([future_tour])
     end
   end
 end
